@@ -14,7 +14,7 @@ let listener = new THREE.AudioListener();
 camera.add(listener);
 const sound = new THREE.Audio(listener);
 const loader = new THREE.AudioLoader();
-loader.load('../TPA.mp3', (buffer)=>{
+loader.loadAsync('./assets/TPA.mp3', (buffer)=>{
     sound.setBuffer(buffer);
     sound.setVolume(1);
     sound.play();
