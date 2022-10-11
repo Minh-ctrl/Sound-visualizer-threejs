@@ -14,7 +14,7 @@ let listener = new THREE.AudioListener();
 camera.add(listener);
 const sound = new THREE.Audio(listener);
 const loader = new THREE.AudioLoader();
-loader.loadAsync('./assets/TPA.mp3', (buffer)=>{
+loader.loadAsync('https://github.com/Minh-ctrl/Sound-visualizer-threejs/blob/main/TPA.mp3?raw=true', (buffer)=>{
     sound.setBuffer(buffer);
     sound.setVolume(1);
     sound.play();
@@ -104,7 +104,6 @@ let clock = new THREE.Clock();
 
 (async function (){
     renderer.setAnimationLoop((x)=>{
-        console.log(camera.position)
         let analyzerData = analyzer.getFrequencyData();
         renderer.render(lines, camera);
         deleteLines();
